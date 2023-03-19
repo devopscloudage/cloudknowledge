@@ -1,10 +1,11 @@
-FROM centos:latest
-MAINTAINER NewstarCorporation
-RUN yum -y install httpd
-COPY index.html /var/www/html/
-CMD [“/usr/sbin/httpd”, “-D”, “FOREGROUND”]
-EXPOSE 80
+# Pull tomcat latest image from dockerhub 
+From tomcat:latest
 
+# Maintainer
+MAINTAINER "Amit Kumar Gupta" 
+
+# copy war file on to container 
+COPY ./webapp.war /usr/local/tomcat/webapps
 
 
 
